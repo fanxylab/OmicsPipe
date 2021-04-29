@@ -1,0 +1,20 @@
+***********************************************************
+* Author : Zhou Wei                                       *
+* Date   : Wed Apr 28 19:51:09 2021                       *
+* E-mail : welljoea@gmail.com                             *
+* You are using The scripted by Zhou Wei.                 *
+* If you find some bugs, please email to me.              *
+* Please let me know and acknowledge in your publication. *
+* Sincerely                                               *
+* Best wishes!                                            *
+***********************************************************
+***********The argument you have set as follows:***********
+**01|input        : ./sample.infor.txt
+**02|outdir       : ./
+**03|prefix       : 
+**04|jobway       : sge
+**05|qsub         : False
+**06|flowfile     : None
+***********************************************************
+[2021-04-28 19:51:11] [INFO]: Success!!!
+[2021-04-28 19:51:11] [INFO]: You can check your progress in log file.

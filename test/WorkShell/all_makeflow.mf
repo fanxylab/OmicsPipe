@@ -1,0 +1,972 @@
+SID=TS-Bu-1-input
+RID=TS-Bu-1-input
+CID=nan
+Lane=L1
+Rep=D1
+AID=TS-Bu-1-input__D1__L1
+TID=TS-Bu-1-input__D1
+LID=TS-Bu-1-input__L1
+AIDs=(TS-Bu-1-input__D1__L1)
+TIDs=(TS-Bu-1-input__D1)
+LIDs=(TS-Bu-1-input__D1__L1)
+Group=nan
+R1=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_1.fq.gz
+R2=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_2.fq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="fastqclink.TS-Bu-1-input__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r2.fq.gz : /share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_1.fq.gz /share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+
+CATEGORY="cutadapt.trim.TS-Bu-1-input__D1__L1"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+
+CATEGORY="fastqc.TS-Bu-1-input__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//FastQC/TS-Bu-1-input__D1__L1_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//FastQC/TS-Bu-1-input__D1__L1_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+
+CATEGORY="trim_galore.TS-Bu-1-input__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//TRIMGalore/TS-Bu-1-input__D1__L1_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//TRIMGalore/TS-Bu-1-input__D1__L1_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//RawFQ/TS-Bu-1-input__D1__L1_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+
+CATEGORY="bwa_mem.TS-Bu-1-input__D1__L1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1__L1.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BWAmem /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//CutAdapt/TS-Bu-1-input__D1__L1_trimmed_2.fq.gz
+
+
+SID=TS-Bu-1-input
+RID=TS-Bu-1-input
+CID=nan
+Lane=L1
+Rep=D1
+AID=TS-Bu-1-input__D1__L1
+TID=TS-Bu-1-input__D1
+LID=TS-Bu-1-input__L1
+AIDs=(TS-Bu-1-input__D1__L1)
+TIDs=(TS-Bu-1-input__D1)
+LIDs=(TS-Bu-1-input__D1__L1)
+Group=nan
+R1=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_1.fq.gz
+R2=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_2.fq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="bwa.trans.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1__L1.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMtrans /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+
+CATEGORY="bam.filter.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam.bai : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMfilter /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.bam
+
+CATEGORY="bam.stat.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Stat : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMstat /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.bam
+
+CATEGORY="bam.deepstat.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//DEEPT_Stat/TS-Bu-1-input__D1.heatmap.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//DEEPT_Stat/TS-Bu-1-input__D1.Heatmap1sortedRegions.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/DEEPTstate /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam 
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BIGWIG/TS-Bu-1-input__D1.scaled.bigWig : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BIGWIG  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.macs2.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_summits.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MACS2_CallPeak  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam 
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.genrich.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//GENRICH_CP/TS-Bu-1-input__D1_genrich.peaks.narrowPeak : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/GENRICH_CallPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam 
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//GENRICH_CP/TS-Bu-1-input__D1_genrich.peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//GENRICH_CP/TS-Bu-1-input__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//GENRICH_CP/TS-Bu-1-input__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.annotate.homer.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//HOMER_ANNO/TS-Bu-1-input__D1_peaks.annotatePeaks.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Anno /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//HOMER_ANNO/TS-Bu-1-input__D1/homerResults.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Motifs /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+
+CATEGORY="ataqv.qc.TS-Bu-1-input__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//ATAQC/TS-Bu-1-input__D1.ataqv.json.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/ATAQV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//ATAQC/TS-Bu-1-input/index.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//ATAQC/TS-Bu-1-input__D1.ataqv.json.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MKARV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//IDR/TS-Bu-1-input.idrValues.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//MACS2_CP/TS-Bu-1-input__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/IDR /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//WorkShell/TS-Bu-1-input__D1__L1_CHIP.input
+
+
+SID=ND1-1W-oligo_S3
+RID=ND1-1W-oligo_S3
+CID=nan
+Lane=L2
+Rep=D1
+AID=ND1-1W-oligo_S3__D1__L2
+TID=ND1-1W-oligo_S3__D1
+LID=ND1-1W-oligo_S3__L2
+AIDs=(ND1-1W-oligo_S3__D1__L2)
+TIDs=(ND1-1W-oligo_S3__D1)
+LIDs=(ND1-1W-oligo_S3__D1__L2)
+Group=1.0
+R1=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz
+R2=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="fastqclink.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz : /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+
+CATEGORY="cutadapt.trim.ND1-1W-oligo_S3__D1__L2"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+
+CATEGORY="fastqc.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//FastQC/ND1-1W-oligo_S3__D1__L2_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//FastQC/ND1-1W-oligo_S3__D1__L2_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+
+CATEGORY="trim_galore.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//TRIMGalore/ND1-1W-oligo_S3__D1__L2_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//TRIMGalore/ND1-1W-oligo_S3__D1__L2_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+
+CATEGORY="bwa_mem.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1__L2.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BWAmem /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz
+
+
+SID=ND1-1W-oligo_S3
+RID=ND1-1W-oligo_S3
+CID=nan
+Lane=L2
+Rep=D1
+AID=ND1-1W-oligo_S3__D1__L2
+TID=ND1-1W-oligo_S3__D1
+LID=ND1-1W-oligo_S3__L2
+AIDs=(ND1-1W-oligo_S3__D1__L2)
+TIDs=(ND1-1W-oligo_S3__D1)
+LIDs=(ND1-1W-oligo_S3__D1__L2)
+Group=1.0
+R1=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz
+R2=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="bwa.trans.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1__L2.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMtrans /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+
+CATEGORY="bam.filter.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam.bai : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMfilter /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+
+CATEGORY="bam.stat.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Stat : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMstat /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+
+CATEGORY="bam.deepstat.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//DEEPT_Stat/ND1-1W-oligo_S3__D1.heatmap.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//DEEPT_Stat/ND1-1W-oligo_S3__D1.Heatmap1sortedRegions.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/DEEPTstate /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam 
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BIGWIG/ND1-1W-oligo_S3__D1.scaled.bigWig : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BIGWIG  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.macs2.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_summits.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MACS2_CallPeak  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam 
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.genrich.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/GENRICH_CallPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam 
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.annotate.homer.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//HOMER_ANNO/ND1-1W-oligo_S3__D1_peaks.annotatePeaks.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Anno /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//HOMER_ANNO/ND1-1W-oligo_S3__D1/homerResults.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Motifs /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+
+CATEGORY="ataqv.qc.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//ATAQC/ND1-1W-oligo_S3__D1.ataqv.json.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/ATAQV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//ATAQC/ND1-1W-oligo_S3/index.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//ATAQC/ND1-1W-oligo_S3__D1.ataqv.json.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MKARV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//IDR/ND1-1W-oligo_S3.idrValues.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/IDR /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/CHIP//WorkShell/ND1-1W-oligo_S3__D1__L2_CHIP.input
+
+
+SID=TS-Bu-1-H3K27ac
+RID=TS-Bu-1-H3K27ac
+CID=TS-Bu-1-input
+Lane=L4
+Rep=D1
+AID=TS-Bu-1-H3K27ac__D1__L4
+TID=TS-Bu-1-H3K27ac__D1
+LID=TS-Bu-1-H3K27ac__L4
+AIDs=(TS-Bu-1-H3K27ac__D1__L4)
+TIDs=(TS-Bu-1-H3K27ac__D1)
+LIDs=(TS-Bu-1-H3K27ac__D1__L4)
+Group=nan
+R1=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_1.fq.gz
+R2=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_2.fq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="fastqclink.TS-Bu-1-H3K27ac__D1__L4"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r2.fq.gz : /share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_1.fq.gz /share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+
+CATEGORY="cutadapt.trim.TS-Bu-1-H3K27ac__D1__L4"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+
+CATEGORY="fastqc.TS-Bu-1-H3K27ac__D1__L4"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//FastQC/TS-Bu-1-H3K27ac__D1__L4_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//FastQC/TS-Bu-1-H3K27ac__D1__L4_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+
+CATEGORY="trim_galore.TS-Bu-1-H3K27ac__D1__L4"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//TRIMGalore/TS-Bu-1-H3K27ac__D1__L4_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//TRIMGalore/TS-Bu-1-H3K27ac__D1__L4_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//RawFQ/TS-Bu-1-H3K27ac__D1__L4_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+
+CATEGORY="bwa_mem.TS-Bu-1-H3K27ac__D1__L4"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1__L4.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BWAmem /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//CutAdapt/TS-Bu-1-H3K27ac__D1__L4_trimmed_2.fq.gz
+
+
+SID=TS-Bu-1-H3K27ac
+RID=TS-Bu-1-H3K27ac
+CID=TS-Bu-1-input
+Lane=L4
+Rep=D1
+AID=TS-Bu-1-H3K27ac__D1__L4
+TID=TS-Bu-1-H3K27ac__D1
+LID=TS-Bu-1-H3K27ac__L4
+AIDs=(TS-Bu-1-H3K27ac__D1__L4)
+TIDs=(TS-Bu-1-H3K27ac__D1)
+LIDs=(TS-Bu-1-H3K27ac__D1__L4)
+Group=nan
+R1=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_1.fq.gz
+R2=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_2.fq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="bwa.trans.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1__L4.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMtrans /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+
+CATEGORY="bam.filter.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam.bai : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMfilter /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.bam
+
+CATEGORY="bam.stat.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Stat : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMstat /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.bam
+
+CATEGORY="bam.deepstat.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//DEEPT_Stat/TS-Bu-1-H3K27ac__D1.heatmap.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//DEEPT_Stat/TS-Bu-1-H3K27ac__D1.Heatmap1sortedRegions.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/DEEPTstate /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BIGWIG/TS-Bu-1-H3K27ac__D1.scaled.bigWig : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BIGWIG  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.macs2.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_summits.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MACS2_CallPeak  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.genrich.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//GENRICH_CP/TS-Bu-1-H3K27ac__D1_genrich.peaks.narrowPeak : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/GENRICH_CallPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//GENRICH_CP/TS-Bu-1-H3K27ac__D1_genrich.peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//GENRICH_CP/TS-Bu-1-H3K27ac__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//GENRICH_CP/TS-Bu-1-H3K27ac__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.annotate.homer.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//HOMER_ANNO/TS-Bu-1-H3K27ac__D1_peaks.annotatePeaks.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Anno /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//HOMER_ANNO/TS-Bu-1-H3K27ac__D1/homerResults.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Motifs /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+
+CATEGORY="ataqv.qc.TS-Bu-1-H3K27ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//ATAQC/TS-Bu-1-H3K27ac__D1.ataqv.json.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/ATAQV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//BAM_Align/TS-Bu-1-H3K27ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//ATAQC/TS-Bu-1-H3K27ac/index.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//ATAQC/TS-Bu-1-H3K27ac__D1.ataqv.json.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MKARV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//IDR/TS-Bu-1-H3K27ac.idrValues.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//MACS2_CP/TS-Bu-1-H3K27ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/IDR /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K27ac/CHIP//WorkShell/TS-Bu-1-H3K27ac__D1__L4_CHIP.input
+
+
+SID=TS-Bu-1-H3K9ac
+RID=TS-Bu-1-H3K9ac
+CID=TS-Bu-1-input
+Lane=L1
+Rep=D1
+AID=TS-Bu-1-H3K9ac__D1__L1
+TID=TS-Bu-1-H3K9ac__D1
+LID=TS-Bu-1-H3K9ac__L1
+AIDs=(TS-Bu-1-H3K9ac__D1__L1)
+TIDs=(TS-Bu-1-H3K9ac__D1)
+LIDs=(TS-Bu-1-H3K9ac__D1__L1)
+Group=nan
+R1=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_1.fq.gz
+R2=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_2.fq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="fastqclink.TS-Bu-1-H3K9ac__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r2.fq.gz : /share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_1.fq.gz /share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+
+CATEGORY="cutadapt.trim.TS-Bu-1-H3K9ac__D1__L1"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+
+CATEGORY="fastqc.TS-Bu-1-H3K9ac__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//FastQC/TS-Bu-1-H3K9ac__D1__L1_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//FastQC/TS-Bu-1-H3K9ac__D1__L1_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+
+CATEGORY="trim_galore.TS-Bu-1-H3K9ac__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//TRIMGalore/TS-Bu-1-H3K9ac__D1__L1_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//TRIMGalore/TS-Bu-1-H3K9ac__D1__L1_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//RawFQ/TS-Bu-1-H3K9ac__D1__L1_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+
+CATEGORY="bwa_mem.TS-Bu-1-H3K9ac__D1__L1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1__L1.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BWAmem /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//CutAdapt/TS-Bu-1-H3K9ac__D1__L1_trimmed_2.fq.gz
+
+
+SID=TS-Bu-1-H3K9ac
+RID=TS-Bu-1-H3K9ac
+CID=TS-Bu-1-input
+Lane=L1
+Rep=D1
+AID=TS-Bu-1-H3K9ac__D1__L1
+TID=TS-Bu-1-H3K9ac__D1
+LID=TS-Bu-1-H3K9ac__L1
+AIDs=(TS-Bu-1-H3K9ac__D1__L1)
+TIDs=(TS-Bu-1-H3K9ac__D1)
+LIDs=(TS-Bu-1-H3K9ac__D1__L1)
+Group=nan
+R1=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_1.fq.gz
+R2=/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_2.fq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP/
+Species=mm10
+Module=CHIP
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP
+
+CATEGORY="bwa.trans.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1__L1.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMtrans /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+
+CATEGORY="bam.filter.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam.bai : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMfilter /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.bam
+
+CATEGORY="bam.stat.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Stat : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BAMstat /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.bam
+
+CATEGORY="bam.deepstat.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//DEEPT_Stat/TS-Bu-1-H3K9ac__D1.heatmap.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//DEEPT_Stat/TS-Bu-1-H3K9ac__D1.Heatmap1sortedRegions.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/DEEPTstate /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BIGWIG/TS-Bu-1-H3K9ac__D1.scaled.bigWig : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/BIGWIG  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.macs2.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_summits.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MACS2_CallPeak  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.genrich.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//GENRICH_CP/TS-Bu-1-H3K9ac__D1_genrich.peaks.narrowPeak : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/GENRICH_CallPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-input/CHIP//BAM_Align/TS-Bu-1-input__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//GENRICH_CP/TS-Bu-1-H3K9ac__D1_genrich.peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//GENRICH_CP/TS-Bu-1-H3K9ac__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//GENRICH_CP/TS-Bu-1-H3K9ac__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.annotate.homer.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//HOMER_ANNO/TS-Bu-1-H3K9ac__D1_peaks.annotatePeaks.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Anno /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//HOMER_ANNO/TS-Bu-1-H3K9ac__D1/homerResults.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/HOMER_Motifs /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+
+CATEGORY="ataqv.qc.TS-Bu-1-H3K9ac__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//ATAQC/TS-Bu-1-H3K9ac__D1.ataqv.json.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/ATAQV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//BAM_Align/TS-Bu-1-H3K9ac__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//ATAQC/TS-Bu-1-H3K9ac/index.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//ATAQC/TS-Bu-1-H3K9ac__D1.ataqv.json.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/MKARV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//IDR/TS-Bu-1-H3K9ac.idrValues.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//MACS2_CP/TS-Bu-1-H3K9ac__D1_peaks.narrowPeak
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/CHIP/IDR /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/TS-Bu-1-H3K9ac/CHIP//WorkShell/TS-Bu-1-H3K9ac__D1__L1_CHIP.input
+
+
+SID=ND1-1W-oligo_S3
+RID=ND1-1W-oligo_S3
+CID=nan
+Lane=L2
+Rep=D1
+AID=ND1-1W-oligo_S3__D1__L2
+TID=ND1-1W-oligo_S3__D1
+LID=ND1-1W-oligo_S3__L2
+AIDs=(ND1-1W-oligo_S3__D1__L2)
+TIDs=(ND1-1W-oligo_S3__D1)
+LIDs=(ND1-1W-oligo_S3__D1__L2)
+Group=1.0
+R1=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz
+R2=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC/
+Species=mm10
+Module=ATAC
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC
+
+CATEGORY="fastqclink.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz : /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+
+CATEGORY="cutadapt.trim.ND1-1W-oligo_S3__D1__L2"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+
+CATEGORY="fastqc.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//FastQC/ND1-1W-oligo_S3__D1__L2_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//FastQC/ND1-1W-oligo_S3__D1__L2_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+
+CATEGORY="trim_galore.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//TRIMGalore/ND1-1W-oligo_S3__D1__L2_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//TRIMGalore/ND1-1W-oligo_S3__D1__L2_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//RawFQ/ND1-1W-oligo_S3__D1__L2_r2.fq.gz
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+
+CATEGORY="bwa_mem.ND1-1W-oligo_S3__D1__L2"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1__L2.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/BWAmem /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//CutAdapt/ND1-1W-oligo_S3__D1__L2_trimmed_2.fq.gz
+
+
+SID=ND1-1W-oligo_S3
+RID=ND1-1W-oligo_S3
+CID=nan
+Lane=L2
+Rep=D1
+AID=ND1-1W-oligo_S3__D1__L2
+TID=ND1-1W-oligo_S3__D1
+LID=ND1-1W-oligo_S3__L2
+AIDs=(ND1-1W-oligo_S3__D1__L2)
+TIDs=(ND1-1W-oligo_S3__D1)
+LIDs=(ND1-1W-oligo_S3__D1__L2)
+Group=1.0
+R1=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz
+R2=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC/
+Species=mm10
+Module=ATAC
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC
+
+CATEGORY="bwa.trans.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1__L2.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/BAMtrans /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+
+CATEGORY="bam.filter.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam.bai : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/BAMfilter /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+
+CATEGORY="bam.stat.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Stat : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/BAMstat /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.bam
+
+CATEGORY="bam.deepstat.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//DEEPT_Stat/ND1-1W-oligo_S3__D1.heatmap.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//DEEPT_Stat/ND1-1W-oligo_S3__D1.Heatmap1sortedRegions.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/DEEPTstate /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BIGWIG/ND1-1W-oligo_S3__D1.scaled.bigWig : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/BIGWIG  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.macs2.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_summits.bed : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/MACS2_CallPeak  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.genrich.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/GENRICH_CallPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/FRIP /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//GENRICH_CP/ND1-1W-oligo_S3__D1_genrich.peaks.narrowPeak /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam
+
+CATEGORY="callpeak.annotate.homer.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//HOMER_ANNO/ND1-1W-oligo_S3__D1_peaks.annotatePeaks.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/HOMER_Anno /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//HOMER_ANNO/ND1-1W-oligo_S3__D1/homerResults.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/HOMER_Motifs /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+
+CATEGORY="ataqv.qc.ND1-1W-oligo_S3__D1"
+CORES=7
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//ATAQC/ND1-1W-oligo_S3__D1.ataqv.json.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/ATAQV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//BAM_Align/ND1-1W-oligo_S3__D1.sort.markdup.remove2820.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//ATAQC/ND1-1W-oligo_S3/index.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//ATAQC/ND1-1W-oligo_S3__D1.ataqv.json.gz
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/MKARV /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//IDR/ND1-1W-oligo_S3.idrValues.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//MACS2_CP/ND1-1W-oligo_S3__D1_peaks.narrowPeak
+    /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/ATAC/IDR /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/ND1-1W-oligo_S3/ATAC//WorkShell/ND1-1W-oligo_S3__D1__L2_ATAC.input
+
+
+SID=U2OS_b3_R1
+RID=U2OS-b3-R1_L1_Q801605
+CID=nan
+Lane=L1
+Rep=D1
+AID=U2OS_b3_R1__D1__L1
+TID=U2OS_b3_R1__D1
+LID=U2OS_b3_R1__L1
+AIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+TIDs=(U2OS_b3_R1__D1)
+LIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+Group=1.0
+R1=/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R1.fastq.gz
+R2=/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R2.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2/
+Species=hg38
+Module=SS2
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2
+CATEGORY="fastqclink.U2OS_b3_R1__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r2.fq.gz : /data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R1.fastq.gz /data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R2.fastq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+CATEGORY="cutadapt.trim.U2OS_b3_R1__D1__L1"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+CATEGORY="fastqc.U2OS_b3_R1__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//FastQC/U2OS_b3_R1__D1__L1_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//FastQC/U2OS_b3_R1__D1__L1_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+CATEGORY="trim_galore.U2OS_b3_R1__D1__L1"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//TRIMGalore/U2OS_b3_R1__D1__L1_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//TRIMGalore/U2OS_b3_R1__D1__L1_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L1_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input 
+
+CATEGORY="star.U2OS_b3_R1__D1__L1"
+CORES=20
+MEMORY=40000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L1.Aligned.toTranscriptome.out.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L1.Aligned.sortedByCoord.out.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/STAr /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz
+
+CATEGORY="hisat2.U2OS_b3_R1__D1__L1"
+CORES=20
+MEMORY=40000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//HISAT2//U2OS_b3_R1__D1__L1.hisat2.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/HISAT2  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz
+
+
+SID=U2OS_b3_R1
+RID=U2OS_b3_R1_S4
+CID=nan
+Lane=L2
+Rep=D1
+AID=U2OS_b3_R1__D1__L2
+TID=U2OS_b3_R1__D1
+LID=U2OS_b3_R1__L2
+AIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+TIDs=(U2OS_b3_R1__D1)
+LIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+Group=1.0
+R1=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R1_S4_L002_R1_001.fastq.gz
+R2=/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R1_S4_L002_R2_001.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2/
+Species=hg38
+Module=SS2
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2
+CATEGORY="fastqclink.U2OS_b3_R1__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r2.fq.gz : /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R1_S4_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R1_S4_L002_R2_001.fastq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/FastqLink /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L2_SS2.input
+
+CATEGORY="cutadapt.trim.U2OS_b3_R1__D1__L2"
+CORES=12
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/CUTAdapt /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L2_SS2.input
+
+CATEGORY="fastqc.U2OS_b3_R1__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//FastQC/U2OS_b3_R1__D1__L2_r1_fastqc.html /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//FastQC/U2OS_b3_R1__D1__L2_trimmed_2_fastqc.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/FastQC /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L2_SS2.input
+
+CATEGORY="trim_galore.U2OS_b3_R1__D1__L2"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//TRIMGalore/U2OS_b3_R1__D1__L2_val_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//TRIMGalore/U2OS_b3_R1__D1__L2_val_2.fq.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RawFQ/U2OS_b3_R1__D1__L2_r2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/TRIMGalore /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L2_SS2.input 
+
+CATEGORY="star.U2OS_b3_R1__D1__L2"
+CORES=20
+MEMORY=40000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L2.Aligned.toTranscriptome.out.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L2.Aligned.sortedByCoord.out.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/STAr /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L2_SS2.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+
+CATEGORY="hisat2.U2OS_b3_R1__D1__L2"
+CORES=20
+MEMORY=40000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//HISAT2//U2OS_b3_R1__D1__L2.hisat2.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/HISAT2  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L2_SS2.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+
+
+SID=U2OS_b3_R1
+RID=U2OS-b3-R1_L1_Q801605
+CID=nan
+Lane=L1
+Rep=D1
+AID=U2OS_b3_R1__D1__L1
+TID=U2OS_b3_R1__D1
+LID=U2OS_b3_R1__L1
+AIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+TIDs=(U2OS_b3_R1__D1)
+LIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+Group=1.0
+R1=/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R1.fastq.gz
+R2=/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R2.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2/
+Species=hg38
+Module=SS2
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2
+
+CATEGORY="bwa.trans.star.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.toTranscriptome.sort.markdup.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.toTranscriptome.sortN.markdup.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sortN.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L1.Aligned.toTranscriptome.out.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L2.Aligned.toTranscriptome.out.bam  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L1.Aligned.sortedByCoord.out.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1__L2.Aligned.sortedByCoord.out.bam 
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/BAMTranStar /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+CATEGORY="bwa.trans.hisat.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//HISAT2//U2OS_b3_R1__D1.hisat2.sort.markdup.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//HISAT2//U2OS_b3_R1__D1.hisat2.sortN.markdup.bam : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//HISAT2//U2OS_b3_R1__D1__L1.hisat2.bam /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//HISAT2//U2OS_b3_R1__D1__L2.hisat2.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/BAMTranHisat /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+CATEGORY="rsemce.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RSEM//U2OS_b3_R1__D1.rsemce.isoforms.results /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//RSEM//U2OS_b3_R1__D1.rsemce.genes.results : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.toTranscriptome.sortN.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/RSEMce /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input  /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.toTranscriptome.sortN.markdup.bam
+
+CATEGORY="featureCounts.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//FeatureCounts//U2OS_b3_R1__D1.fCounts.txt : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/FeatureCounts /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam
+
+CATEGORY="cufflinks.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CuffLinks//U2OS_b3_R1__D1.combined.gtf : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/CuffLinks /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam
+
+CATEGORY="starfusion.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=20000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STARFusion//U2OS_b3_R1__D1/star-fusion.fusion_predictions.abridged.tsv : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/STArFusion /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+
+SID=U2OS_b3_R1
+RID=U2OS-b3-R1_L1_Q801605
+CID=nan
+Lane=L1
+Rep=D1
+AID=U2OS_b3_R1__D1__L1
+TID=U2OS_b3_R1__D1
+LID=U2OS_b3_R1__L1
+AIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+TIDs=(U2OS_b3_R1__D1)
+LIDs=(U2OS_b3_R1__D1__L1 U2OS_b3_R1__D1__L2)
+Group=1.0
+R1=/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R1.fastq.gz
+R2=/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R2.fastq.gz
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2/
+Species=hg38
+Module=SS2
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2
+
+CATEGORY="asgal.splicing.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=40000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//ASGAL//U2OS_b3_R1__D1/ASGAL.csv : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_1.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L1_trimmed_2.fq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//CutAdapt/U2OS_b3_R1__D1__L2_trimmed_2.fq.gz
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/ASGAL /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input
+
+CATEGORY="spladder.splicing.U2OS_b3_R1__D1"
+CORES=10
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//SplAdder/U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup_exon_skip_C3.txt.gz : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam
+     /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/SS2/SplAdder /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//WorkShell/U2OS_b3_R1__D1__L1_SS2.input /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/U2OS_b3_R1/SS2//STAR//U2OS_b3_R1__D1.Aligned.sortedByCoord.sort.markdup.bam
+
+
+SID=mE16-5-10x-GE
+UIDs=(mE16-5-10x-GE-1 mE16-5-10x-GE-2 mE16-5-10x-GE-3 mE16-5-10x-GE-4)
+HIDs=(mE16-5-10x-GE-1_S13_L002 mE16-5-10x-GE-2_S14_L002 mE16-5-10x-GE-3_S15_L002 mE16-5-10x-GE-4_S16_L002)
+R1s=(/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-1_S13_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-2_S14_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-3_S15_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-4_S16_L002_R1_001.fastq.gz)
+R2s=(/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-1_S13_L002_R2_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-2_S14_L002_R2_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-3_S15_L002_R2_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-4_S16_L002_R2_001.fastq.gz)
+OUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test
+AUT=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA/
+Species=mm10
+Module=10XRNA
+WORKFLOW_DIR=/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/Genom10XRNA
+
+CATEGORY="fastqclink.mE16-5-10x-GE"
+CORES=7
+MEMORY=30000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-1_S13_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-2_S14_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-3_S15_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-4_S16_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-1_S13_L002_R2_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-2_S14_L002_R2_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-3_S15_L002_R2_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-4_S16_L002_R2_001.fastq.gz : /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-1_S13_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-2_S14_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-3_S15_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-4_S16_L002_R1_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-1_S13_L002_R2_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-2_S14_L002_R2_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-3_S15_L002_R2_001.fastq.gz /datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-4_S16_L002_R2_001.fastq.gz
+    sh /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/Genom10XRNA/FastqLink.sh /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//WorkShell/mE16-5-10x-GE_10XRNA.input
+
+CATEGORY="10xrna.mE16-5-10x-GE"
+CORES=20
+MEMORY=40000
+DISK=10
+/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//Count/mE16-5-10x-GE/outs/web_summary.html : /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-1_S13_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-2_S14_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-3_S15_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-4_S16_L002_R1_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-1_S13_L002_R2_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-2_S14_L002_R2_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-3_S15_L002_R2_001.fastq.gz /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//RawFQ/mE16-5-10x-GE-4_S16_L002_R2_001.fastq.gz 
+    sh /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/OMICS/Genom10XRNA/G10XmRNA.sh /datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test/mE16-5-10x-GE/10XRNA//WorkShell/mE16-5-10x-GE_10XRNA.input
+

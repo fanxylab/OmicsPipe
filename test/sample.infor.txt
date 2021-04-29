@@ -1,0 +1,24 @@
+#Sampleid: the sample id. the same id get one output directory.
+#Uniqueid: the unique id.
+#Lane    : the library lane id. You need to set lane format like L001 and L021 if running 10xgenomics piepline. 
+#Rep     : the biological duplication in some modules, such as CHIP and ATAC
+#Group   : the sample group.
+#Control : The control sample used for  masking background single.
+#Module  : the pipeline modules. One sample can analyze multiple modules.
+#Species : the reference genome name, including hg38, hg19, mm10 and mm9. You also can assign youself reference by modifying env.Configure file
+#Outdir  : the output directory. You can set different path.
+#Fastq   : the r1 and r2 fastq file split by comma or semicolon. If you have multiple paired fastq files, you can set multiple lines with different LaneID (column 3).
+Sampleid	Uniqueid	Lane	Rep	Group	Control	Module	Species	Outdir	Fastq	Havadone
+TS-Bu-1-H3K27ac	TS-Bu-1-H3K27ac	L4	D1		TS-Bu-1-input	CHIP	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_1.fq.gz,/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K27ac_L4_2.fq.gz	
+TS-Bu-1-H3K9ac	TS-Bu-1-H3K9ac	L1	D1		TS-Bu-1-input	CHIP	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_1.fq.gz,/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-H3K9ac_L1_2.fq.gz	
+TS-Bu-1-input	TS-Bu-1-input	L1	D1			CHIP	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_1.fq.gz,/share/home/pubdata/SCDB/20210106_1514/Rawdata/TS-Bu-1-input_L1_2.fq.gz	
+ND1-1W-oligo_S3	ND1-1W-oligo_S3	L2	D1	1		CHIP	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz	
+ND1-1W-oligo_S3	ND1-1W-oligo_S3	L2	D1	1		ATAC	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/ND1-1W-oligo_S3_L002_R2_001.fastq.gz	
+U2OS_b3_R1	U2OS-b3-R1_L1_Q801605	L1	D1	1		SS2	hg38	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R1.fastq.gz,/data/pubdata/SCDB/20200914_1800/U2OS-b3-R1_L1_Q801605.R2.fastq.gz	
+U2OS_b3_R1	U2OS_b3_R1_S4	L2	D1	1		SS2	hg38	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R1_S4_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R1_S4_L002_R2_001.fastq.gz	
+#U2OS_b3_R10	U2OS-b3-R10_L1_Q810605	L1	D1	1		SS2	hg38	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/data/pubdata/SCDB/20200914_1800/U2OS-b3-R10_L1_Q810605.R1.fastq.gz,/data/pubdata/SCDB/20200914_1800/U2OS-b3-R10_L1_Q810605.R2.fastq.gz	
+#U2OS_b3_R10	U2OS_b3_R10_S11	L2	D1	1		SS2	hg38	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R10_S11_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/U2OS_b3_R10_S11_L002_R2_001.fastq.gz	
+mE16-5-10x-GE	mE16-5-10x-GE-1	L002	S13	1		10XRNA	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-1_S13_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-1_S13_L002_R2_001.fastq.gz	
+mE16-5-10x-GE	mE16-5-10x-GE-2	L002	S14	1		10XRNA	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-2_S14_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-2_S14_L002_R2_001.fastq.gz	
+mE16-5-10x-GE	mE16-5-10x-GE-3	L002	S15	1		10XRNA	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-3_S15_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-3_S15_L002_R2_001.fastq.gz	
+mE16-5-10x-GE	mE16-5-10x-GE-4	L002	S16	1		10XRNA	mm10	/datd/zhouwei/01Projects/06Pipeline/OmicsPipe/test	/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-4_S16_L002_R1_001.fastq.gz,/datd/pubdata/SCDB/20210204_0935/210127_A00869_0397_BHVG5NDSXY/mE16-5-10x-GE-4_S16_L002_R2_001.fastq.gz	
