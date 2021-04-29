@@ -31,7 +31,7 @@ The input file format. You can refer to [test](test/sample.infor.txt) file
 |G10XRNA1|G10XRNA1-1|L002|S13|1||10XRNA|mm10|/outpath/|G10XRNA1-1_S13_R1.fastq.gz,G10XRNA1-1_S13_R2.fastq.gz||
 |G10XRNA1|G10XRNA1-2|L002|S14|1||10XRNA|mm10|/outpath/|G10XRNA1-2_S14_R1.fastq.gz,G10XRNA1-2_S14_R2.fastq.gz||
 ```
-Sampleid: the sample id. the same id get one output directory.
+#Sampleid: the sample id. the same id get one output directory.
 #Uniqueid: the unique id.
 #Lane    : the library lane id. You need to set lane format like L001 and L021 if running 10xgenomics piepline. 
 #Rep     : the biological duplication in some modules, such as CHIP and ATAC
