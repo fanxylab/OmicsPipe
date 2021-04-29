@@ -2,7 +2,7 @@
 ## Overview
 
 The [OmicsPipe](https://github.com/fanxylab/OmicsPipe.git) pipeline for processing RNA, ATAC and CHIP data.
-The pipeline is built on [Makeflow](https://cctools.readthedocs.io/en/latest/makeflow/) workflow system. It will be your good choice with the strong readability,  flexible extensibility and large scale distributed computing. 
+The pipeline is built on [Makeflow](https://cctools.readthedocs.io/en/latest/makeflow/) workflow system. It will be your good choice with the excellent features of strong readability, flexible extensibility and large scale distributed computing. 
 
 ## Installation
 
