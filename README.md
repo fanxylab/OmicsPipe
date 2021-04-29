@@ -22,14 +22,14 @@ $ python GetPipeconf.py
 The input file format. You can refer to [test](test/sample.infor.txt) file
 | Sampleid|Uniqueid|Lane|Rep|Group|Control|Module|Species|Outdir|Fastq|Havadone|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|TS-Bu-1-H3K27ac|TS-Bu-1-H3K27ac|L4|D1||TS-Bu-1-input|CHIP|mm10|/outpath/|TS-Bu-1-H3K27ac_L4_1.fq.gz,TS-Bu-1-H3K27ac_L4_2.fq.gz||
-|TS-Bu-1-H3K9ac|TS-Bu-1-H3K9ac|L1|D1||TS-Bu-1-input|CHIP|mm10|/outpath/|TS-Bu-1-H3K9ac_L1_1.fq.gz,TS-Bu-1-H3K9ac_L1_2.fq.gz||
-|TS-Bu-1-input|TS-Bu-1-input|L1|D1|||CHIP|mm10|/outpath/|TS-Bu-1-input_L1_1.fq.gz,TS-Bu-1-input_L1_2.fq.gz||
-|ND1-1W-oligo_S3|ND1-1W-oligo_S3|L2|D1|1||ATAC|mm10|/outpath/|ND1-1W-oligo_S3_L002_R1_001.fastq.gz,ND1-1W-oligo_S3_L002_R2_001.fastq.gz||
-|U2OS_b3_R1|U2OS-b3-R1_L1_Q801605|L1|D1|1||SS2|hg38|/outpath/|U2OS-b3-R1_L1_Q801605.R1.fastq.gz,U2OS-b3-R1_L1_Q801605.R2.fastq.gz||
-|U2OS_b3_R1|U2OS_b3_R1_S4|L2|D1|1||SS2|hg38|/outpath/|U2OS_b3_R1_S4_L002_R1_001.fastq.gz,U2OS_b3_R1_S4_L002_R2_001.fastq.gz||
-|mE16-5-10x-GE|mE16-5-10x-GE-1|L002|S13|1||10XRNA|mm10|/outpath/|mE16-5-10x-GE-1_S13_L002_R1_001.fastq.gz,mE16-5-10x-GE-1_S13_L002_R2_001.fastq.gz||
-|mE16-5-10x-GE|mE16-5-10x-GE-2|L002|S14|1||10XRNA|mm10|/outpath/|mE16-5-10x-GE-2_S14_L002_R1_001.fastq.gz,mE16-5-10x-GE-2_S14_L002_R2_001.fastq.gz||
+|CHIPs1case|CHIPs1case|L4|D1||CHIPscontrol|CHIP|mm10|/outpath/|CHIPs1case_L4_1.fq.gz,CHIPs1case_L4_2.fq.gz||
+|CHIPs2case|CHIPs2case|L1|D1||CHIPscontrol|CHIP|mm10|/outpath/|CHIPs2case_L1_1.fq.gz,CHIPs2case_L1_2.fq.gz||
+|CHIPscontrol|CHIPscontrol|L1|D1|||CHIP|mm10|/outpath/|CHIPscontrol_L1_1.fq.gz,CHIPscontrol_L1_2.fq.gz||
+|ATACs1|ATACs1|L2|D1|1||ATAC|mm10|/outpath/|ATACs1_R1.fastq.gz,ATACs1_R2.fastq.gz||
+|RNAs1|RNAs11|L1|D1|1||SS2|hg38|/outpath/|RNAs11.R1.fastq.gz,RNAs11.R2.fastq.gz||
+|RNAs1|RNAs12|L2|D1|1||SS2|hg38|/outpath/|RNAs12_R1.fastq.gz,RNAs12_R2.fastq.gz||
+|G10XRNA1|G10XRNA1-1|L002|S13|1||10XRNA|mm10|/outpath/|G10XRNA1-1_S13_R1.fastq.gz,G10XRNA1-1_S13_R2.fastq.gz||
+|G10XRNA1|G10XRNA1-2|L002|S14|1||10XRNA|mm10|/outpath/|G10XRNA1-2_S14_R1.fastq.gz,G10XRNA1-2_S14_R2.fastq.gz||
 ```
 Sampleid: the sample id. the same id get one output directory.
 #Uniqueid: the unique id.
